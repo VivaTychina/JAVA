@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Posilka {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Количество коробок для отправки:");
+        int boxes = input.nextInt();
+
+        System.out.println("Вес одной коробки в килограммах:");
+        double singleBoxWeight = input.nextDouble();
+        input.nextLine();
+
+        System.out.println("Введите имя получателя:");
+        String firstName = input.nextLine();
+
+        System.out.println("Введите фамилию получателя:");
+        String lastName = input.nextLine();
+
+        System.out.println("Введите адрес получателя:");
+        String address = input.nextLine();
+        
+
+        double packageWeight = boxes * singleBoxWeight;
+
+        System.out.println("Получатель: \"" + firstName + " " + lastName + "\"");
+        System.out.println("Адрес получателя: \"" + address + "\"");
+        System.out.println("Общий вес посылки: " + packageWeight + " кг");
+
+
+        System.out.println("\nВерная информация? (Да/Нет)");
+        String correct = input.nextLine();
+
+        if (correct.equalsIgnoreCase("Да")) {
+            System.out.println("Тикет создан!");
+            System.out.println("Спасибо за использование нашего сервиса!");
+        } else {
+            System.out.println("Поправьте данные и попробуйте снова.");
+        }
+
+        input.close();
+    }
+}
