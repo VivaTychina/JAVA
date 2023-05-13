@@ -1,0 +1,135 @@
+Код 1 
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class Pogoda {
+    public static void main(String[] args) {
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сегодня выходной? Да или нет");
+        String isWeekendInput = scanner.nextLine();
+
+        boolean isWeekend = isWeekendInput.equalsIgnoreCase("да");
+
+        System.out.println("Идет дождь? Да или нет");
+        String isRainInput = scanner.nextLine();
+
+        boolean isRain = isRainInput.equalsIgnoreCase("да");
+
+        if (isWeekend && !isRain) {
+            System.out.println("Гулять можно!");
+        } else {
+            System.out.println("Гулять нельзя.");
+        }
+
+
+    }
+}
+
+
+
+
+Код 2
+            
+import java.util.Scanner;
+
+public class temperatura {
+    public static void main(String[] args) {
+
+        boolean isHigh;
+        boolean isLow;
+        boolean isHigh2;
+        boolean isLow2;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите температуру первой колбы:");
+        double temperature1 = scanner.nextDouble();
+
+        System.out.println("Введите температуру второй колбы:");
+        double temperature2 = scanner.nextDouble();
+
+            isHigh = (temperature1 > 100);
+            isLow = (temperature1 < 100);
+            if (temperature1 > 100) {
+                System.out.println("Устройство работает хорошо: " + true);
+            } else if (temperature1 < 100){
+                System.out.println("Устройство работает c низкой температурой: " + false);
+            } else {
+                System.out.println("Устройство сбилось");
+            }
+
+        isHigh2 = (temperature2 < 100);
+        isLow2 = (temperature2 > 100);
+        if (temperature1 < 100) {
+            System.out.println("Устройство работает хорошо: " + true);
+        } else if (temperature1 > 100) {
+            System.out.println("Устройство работает c низкой температурой: " + false);
+        } else {
+            System.out.println("Устройство сбилось");
+        }
+
+}}
+
+           Код 3
+            import java.util.Scanner;
+
+public class market {
+    public static void main(String[] args) {
+        System.out.println("Открыт ли магазин Edeka? (да/нет)");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Открыт ли магазин Rewe? (да/нет)");
+        String isEdekaOpenInput = scanner.nextLine();
+        boolean isEdekaOpen;
+        if (isEdekaOpenInput.equalsIgnoreCase("да")) isEdekaOpen = true;
+        else {
+            isEdekaOpen = false;
+        }
+        String isReweOpenInput = scanner.nextLine();
+        boolean isReweOpen = isReweOpenInput.equalsIgnoreCase("да");
+
+        boolean canBuy = canBuy(isEdekaOpen, isReweOpen);if (canBuy) {
+            System.out.println("Я могу купить еду, потому что магазин открыт.");
+        } else {
+            System.out.println("Я не могу купить еду, потому что магазин закрыт.");
+        }
+
+    }
+
+    private static boolean canBuy(boolean isEdekaOpen, boolean isReweOpen) {
+        return isEdekaOpen;
+    }
+}
+
+
+Код 4
+import java.util.Random;
+
+public class Chasu {
+
+
+    
+        public static void main(String[] args) {
+            Random random = new Random();
+            int sec = random.nextInt(28800); // вернет случайное число от нуля до 28800
+            countHours(sec);
+        }
+
+        public static void countHours(int seconds) {
+            System.out.println("Осталось еще" + " " +seconds + " секунд");
+            int hours = seconds / 3600;
+            System.out.println("Осталось еще" + " "  + hours + " чаcов");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
