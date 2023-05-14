@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class DlitelnostMonth {
+
+    enum Month {
+        ЯНВАРЬ (31), ФЕВРАЛЬ(28), МАРТ(31), АПРЕЛЬ(30), МАЙ(31), ИЮНЬ(30),
+        ИЮЛЬ(31), АВГУСТ(31), СЕНТЯБРЬ(30), ОКТЯБРЬ(31), НОЯБРЬ(30), ДЕКАБРЬ(31);
+        private int days;
+
+        Month(int days) {
+            this.days = days;
+        }
+
+        public int getDays() {
+            return days;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Про какой месяц хотите узнать:");
+        String mounts = scanner.nextLine().toUpperCase();
+
+        Month month = Month.valueOf(mounts);
+        String MOW;
+        switch (month.getDays()) {
+            case 30:
+                MOW = "дней";
+                break;
+            case 31:
+                MOW = "день";
+                break;
+            default:
+                MOW = "дней";
+        }
+
+            System.out.println("Длительность выбраного вами месяца составляет " + month.getDays() + " " + MOW + ".");
+
+        }
+    }
